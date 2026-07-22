@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏯 2026 仙台夏日家族之旅 6 日全攻略</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;background:#f5f4f0;color:#1a1a18;min-height:100vh}
+.hero{background:linear-gradient(135deg,#1a3a5c 0%,#2d6a9f 60%,#1e8c6e 100%);color:#fff;padding:2rem 1.5rem 1.5rem;text-align:center}
+.hero-emoji{font-size:48px;margin-bottom:12px}
+.hero-title{font-size:26px;font-weight:700;margin-bottom:6px;letter-spacing:-0.5px}
+.hero-sub{font-size:14px;opacity:0.85;margin-bottom:16px}
+.hero-badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.badge{background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:500}
+.container{max-width:640px;margin:0 auto;padding:1.25rem 1rem 3rem}
+.day-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1.25rem;position:sticky;top:0;background:#f5f4f0;padding:10px 0;z-index:10}
+.tab{padding:7px 16px;border-radius:20px;border:1.5px solid #c8c6be;font-size:13px;font-weight:600;cursor:pointer;background:#fff;color:#555;transition:all .15s;-webkit-tap-highlight-color:transparent}
+.tab.active{background:#1a3a5c;color:#fff;border-color:#1a3a5c}
+.day-panel{display:none}
+.day-panel.active{display:block}
+.day-header{display:flex;align-items:center;gap:12px;margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:1.5px solid #e0ddd6}
+.day-badge{width:52px;height:52px;border-radius:14px;background:#e8f0f8;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+.day-title{font-size:18px;font-weight:700;color:#1a1a18;line-height:1.3}
+.day-date{font-size:13px;color:#666;margin-top:3px}
+.section-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#999;margin-bottom:8px}
+.transport-card{background:#fff;border:1px solid #e0ddd6;border-radius:14px;padding:4px 16px;margin-bottom:1.25rem}
+.transport-step{display:flex;align-items:flex-start;gap:10px;padding:10px 0}
+.transport-step+.transport-step{border-top:1px solid #f0ede8}
+.t-icon{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;margin-top:1px}
+.t-metro{background:#e3f0fc;}.t-walk{background:#e8f5e9;}.t-bus{background:#fff3e0;}
+.t-taxi{background:#fce4ec;}.t-train{background:#ede7f6;}.t-shuttle{background:#e0f2f1;}
+.t-text{flex:1}
+.t-main{font-size:13px;font-weight:600;color:#1a1a18;line-height:1.4}
+.t-sub{font-size:12px;color:#888;margin-top:2px;line-height:1.5}
+.map-btn{display:inline-flex;align-items:center;gap:4px;margin-top:6px;padding:4px 10px;background:#e8f4fd;border:1px solid #b3d9f5;border-radius:20px;font-size:11px;font-weight:600;color:#1565c0;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.map-btn:active{background:#cce4f5}
+.map-arrow{font-size:10px}
+.spots{display:grid;gap:10px;margin-bottom:1.25rem}
+.spot-card{background:#fff;border:1.5px solid #e0ddd6;border-radius:14px;padding:14px 16px;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:border-color .15s}
+.spot-card.open{border-color:#2d6a9f}
+.spot-header{display:flex;align-items:center;gap:10px}
+.spot-icon{font-size:24px;line-height:1;flex-shrink:0}
+.spot-name{font-size:15px;font-weight:700;color:#1a1a18}
+.spot-type{font-size:11px;color:#888;margin-top:2px;font-weight:500}
+.chevron{font-size:16px;color:#bbb;margin-left:auto;transition:transform .2s;flex-shrink:0}
+.spot-card.open .chevron{transform:rotate(180deg)}
+.spot-body{display:none;margin-top:12px;border-top:1px solid #f0ede8;padding-top:12px}
+.spot-card.open .spot-body{display:block}
+.spot-desc{font-size:13px;color:#444;line-height:1.7;margin-bottom:12px}
+.kid-box{background:#f0faf5;border:1px solid #a8dfc4;border-radius:10px;padding:12px 14px;margin-bottom:10px}
+.kid-label{font-size:11px;font-weight:700;color:#1e8c6e;margin-bottom:6px;display:flex;align-items:center;gap:4px;letter-spacing:.05em}
+.kid-text{font-size:13px;color:#1e5c47;line-height:1.65}
+.tip-box{background:#fff8ec;border:1px solid #f5c842;border-radius:10px;padding:12px 14px}
+.tip-label{font-size:11px;font-weight:700;color:#b8860b;margin-bottom:6px;letter-spacing:.05em}
+.tip-text{font-size:12px;color:#7a5c00;line-height:1.65}
+.food-section{margin-bottom:1.5rem}
+.food-row{display:flex;align-items:flex-start;gap:10px;padding:8px 0}
+.food-row+.food-row{border-top:1px solid #f0ede8}
+.food-card-wrap{background:#fff;border:1px solid #e0ddd6;border-radius:14px;padding:4px 16px;margin-bottom:1rem}
+.food-icon{font-size:20px;flex-shrink:0;margin-top:2px}
+.food-name{font-size:13px;font-weight:600;color:#1a1a18}
+.food-detail{font-size:12px;color:#888;margin-top:2px;line-height:1.5}
+.footer{text-align:center;padding:2rem 1rem;color:#aaa;font-size:12px;border-top:1px solid #e0ddd6;margin-top:1rem}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="hero-emoji">🏯</div>
+  <div class="hero-title">2026 仙台夏日家族之旅</div>
+  <div class="hero-sub">07/27（一）～ 08/01（六）・6 天 5 夜</div>
+  <div class="hero-badges">
+    <span class="badge">♿ 全程無障礙</span>
+    <span class="badge">👶 幼童友善</span>
+    <span class="badge">9 人大團體</span>
+    <span class="badge">🥃 威士忌巡禮</span>
+  </div>
+</div>
+
+<div class="container">
+<div class="day-tabs">
+  <button class="tab active" onclick="switchDay(0)">Day 1</button>
+  <button class="tab" onclick="switchDay(1)">Day 2</button>
+  <button class="tab" onclick="switchDay(2)">Day 3</button>
+  <button class="tab" onclick="switchDay(3)">Day 4</button>
+  <button class="tab" onclick="switchDay(4)">Day 5</button>
+  <button class="tab" onclick="switchDay(5)">Day 6</button>
+</div>
+<div id="panels"></div>
+</div>
+
+<div class="footer">🏯 2026 仙台夏日家族之旅・行程規劃卡</div>
+
+<script>
+function gmap(lat,lng,name){
+  return "https://maps.google.com/?q="+lat+","+lng+"&ll="+lat+","+lng+"&z=17";
+}
+function dmap(olat,olng,dlat,dlng,oname,dname){
+  return "https://www.google.com/maps/dir/?api=1&origin="+olat+","+olng+"&destination="+dlat+","+dlng+"&travelmode=walking";
+}
+
+const days=[
+{
+  emoji:"✈️",title:"輕鬆抵達・在地美食初體驗",date:"07/27（一）",
+  transport:[
+    {icon:"t-train",sym:"🚆",main:"仙台機場 → 仙台車站",sub:"仙台機場線（全線無障礙）約 17 分・¥660／人",
+     from:{lat:38.1399,lng:140.9171,name:"仙台機場"},to:{lat:38.2601,lng:140.8824,name:"仙台車站"},mode:"transit"},
+    {icon:"t-walk",sym:"🚶",main:"仙台車站 → 東大都會酒店",sub:"車站直通・步行 1 分・全無障礙電梯",
+     from:{lat:38.2601,lng:140.8824,name:"仙台車站"},to:{lat:38.2596,lng:140.8834,name:"東大都會酒店"},mode:"walking"},
+    {icon:"t-walk",sym:"🚶",main:"酒店 → 伊達牛舌本舖",sub:"步行 5 分・牛舌通周邊",
+     from:{lat:38.2596,lng:140.8834,name:"東大都會酒店"},to:{lat:38.2635,lng:140.8800,name:"伊達の牛たん本舗"},mode:"walking"},
+  ],
+  spots:[
+    {icon:"🏯",name:"仙台車站・牛舌通 & 壽司通",type:"美食街・全程無障礙",mapurl:gmap(38.2601,140.8824,"仙台車站"),
+     desc:"仙台車站 3F 整條街都是牛舌與壽司名店，平坦寬敞、電梯完備，推輪椅完全無障礙。",
+     kid:"「這裡有一條神奇的街道，每間店都在烤牛的舌頭！牛舌就是牛用來舔鹽巴的那個地方，烤熟了會變得外脆內嫩，超級好吃！我們要去試試看，你敢吃嗎？」",
+     tip:"平日晚上排隊人潮少，9 人大團體建議到本店（車站外步行 5 分）用餐更寬敞。"},
+    {icon:"🥤",name:"ずんだ茶寮・毛豆奶昔",type:"甜點・抵達當晚必喝",mapurl:gmap(38.2604,140.8819,"ずんだ茶寮"),
+     desc:"仙台最具代表性的甜飲，由萩の月製造商「菓匠三全」經營。毛豆奶昔是全仙台最多人打卡的飲料，夏天喝一杯消暑感極強。車站 3F 毛豆小徑即有分店。",
+     kid:"「這杯綠綠的奶昔是用毛豆做的！毛豆就是我們吃壽司旁邊那個綠色豆豆，把它打碎加上牛奶就變成這杯神奇飲料，甜甜的超好喝！」",
+     tip:"Short ¥420・Tall ¥530，位於車站 3F，晚上也有開，抵達當天必喝！"},
+  ],
+  food:[
+    {icon:"🥩",name:"伊達牛舌本舖 本店・晚餐",detail:"芯たん定食・極上紅酒燉舌芯・一人約 ¥2,500～3,000"},
+    {icon:"🛍️",name:"S-PAL B1 生鮮區",detail:"採買當季水蜜桃・宮城藍莓・帶回飯店當宵夜"},
+    {icon:"🥤",name:"ずんだ茶寮 甜點",detail:"毛豆奶昔 Short ¥420・毛豆麻糬内用"},
+  ]
+},
+{
+  emoji:"🌳",title:"都會森林放電・水舞公園歡笑",date:"07/28（二）",
+  transport:[
+    {icon:"t-metro",sym:"🚇",main:"仙台站 → 旭ヶ丘站",sub:"地下鐵南北線・約 8 分・¥230／人・全站無障礙",
+     from:{lat:38.2601,lng:140.8824,name:"仙台車站"},to:{lat:38.2952,lng:140.8836,name:"旭ヶ丘站"},mode:"transit"},
+    {icon:"t-walk",sym:"🚶",main:"旭ヶ丘站 → 科學館＋台原森林公園",sub:"步行 3 分・出站即是公園入口",
+     from:{lat:38.2952,lng:140.8836,name:"旭ヶ丘站"},to:{lat:38.2990,lng:140.8833,name:"仙台市科學館"},mode:"walking"},
+    {icon:"t-metro",sym:"🚇",main:"旭ヶ丘站 → 泉中央站（終點）",sub:"地下鐵南北線往北・約 20 分",
+     from:{lat:38.2952,lng:140.8836,name:"旭ヶ丘站"},to:{lat:38.3242,lng:140.8805,name:"泉中央站"},mode:"transit"},
+    {icon:"t-walk",sym:"🚶",main:"泉中央站 → 七北田公園噴泉廣場",sub:"步行 10 分",
+     from:{lat:38.3242,lng:140.8805,name:"泉中央站"},to:{lat:38.3194,lng:140.8771,name:"七北田公園"},mode:"walking"},
+    {icon:"t-metro",sym:"🚇",main:"泉中央站 → 仙台站（返程）",sub:"同一條線直達・約 20 分",
+     from:{lat:38.3242,lng:140.8805,name:"泉中央站"},to:{lat:38.2601,lng:140.8824,name:"仙台車站"},mode:"transit"},
+  ],
+  spots:[
+    {icon:"🔭",name:"HOKUSHU 仙台市科學館",type:"室內冷氣・互動展示・2025 全新翻新",mapurl:gmap(38.2990,140.8833,"仙台市科學館"),
+     desc:"三大主題展示室：宮城自然、科學探究、生活與科學。7/18～8/30 特別展「深宇宙展」正好開展，7/30 有 LEGO 齒輪親子工作坊（需預報名）。全館冷氣開放，雨天最佳備案。",
+     kid:"「這是一個超大的科學遊樂場！裡面有好多按鈕可以按，還有恐龍化石和宇宙星球！你知道月亮跑到那麼遠要多久嗎？這裡會告訴你答案！現在還有太空船的秘密展覽喔！」",
+     tip:"Day2 降雨機率 70%，若下雨可全天待在科學館，噴泉廣場順延或取消。"},
+    {icon:"💦",name:"七北田公園・噴泉廣場",type:"戶外・幼童踩水放電",mapurl:gmap(38.3194,140.8771,"七北田公園"),
+     desc:"泉中央站步行 10 分鐘，設有可讓幼童安全踩水的噴泉廣場。隔壁「都市綠化中心」溫室有冷氣，長輩可在室內舒適休息同時幼童在外玩水。",
+     kid:"「這裡有一個神奇的廣場，地上會突然噴出水柱！你可以在水裡踩踩踩，水柱噴上來的時候不要跑走，讓它噴到你身上會涼涼的超好玩！記得帶換洗衣服！」",
+     tip:"天氣預報 Day2 降雨機率 70%，若下雨則以科學館為主，噴泉活動取消。"},
+  ],
+  food:[
+    {icon:"🍱",name:"伯養軒 網燒牛舌便當（午餐）",detail:"仙台車站 B1 購入・加熱式便當・約 ¥1,500～2,000・公園野餐"},
+    {icon:"🐟",name:"鯛きち 夏季毛豆鯛魚燒（下午茶）",detail:"步行 4 分・¥200 一個"},
+    {icon:"🥢",name:"利久牛舌 中央通り店（晚餐）",detail:"牛舌定食＋紅酒燉牛舌・每人約 ¥2,000～2,500"},
+  ]
+},
+{
+  emoji:"♨️",title:"秋保溫泉・萬花筒光影藝術",date:"07/29（三）",
+  transport:[
+    {icon:"t-shuttle",sym:"🚌",main:"仙台車站 → 佐勘飯店（免費接駁）",sub:"11:00 準時在車站集合・約 40 分",
+     from:{lat:38.2601,lng:140.8824,name:"仙台車站"},to:{lat:38.2283,lng:140.7199,name:"佐勘飯店"},mode:"driving"},
+    {icon:"t-taxi",sym:"🚕",main:"佐勘 → 仙台萬花筒美術館",sub:"計程車約 5 分・¥700 左右",
+     from:{lat:38.2283,lng:140.7199,name:"佐勘飯店"},to:{lat:38.2213,lng:140.7401,name:"仙台萬花筒美術館"},mode:"driving"},
+    {icon:"t-taxi",sym:"🚕",main:"美術館 → 佐勘（傍晚入住）",sub:"計程車同路段返回",
+     from:{lat:38.2213,lng:140.7401,name:"仙台萬花筒美術館"},to:{lat:38.2283,lng:140.7199,name:"佐勘飯店"},mode:"driving"},
+  ],
+  spots:[
+    {icon:"🌀",name:"仙台萬花筒美術館",type:"全室內・冷氣・無障礙・年中無休",mapurl:gmap(38.2213,140.7401,"仙台萬花筒美術館"),
+     desc:"秋保溫泉入口旁，世界初的萬花筒專門美術館。2F・3F 展示數百件各國作家作品，大部分可實際觸摸旋轉觀賞。1F 有自製萬花筒體驗工房（¥1,200）。",
+     kid:"「萬花筒是一個神奇的筒子，你從小洞洞往裡面看，裡面會出現超多漂亮的花樣！一邊轉動它，花樣就會一直變一直變，永遠不會重複！這裡有幾百個不同的萬花筒，你可以自己選一個！」",
+     tip:"開館 9:30～17:00（最後入館 16:30），年中無休。大人 ¥900，小中高 ¥450。"},
+    {icon:"🏞️",name:"磊々峡（らいらいきょう）入口",type:"溪谷景觀・佐勘步行 10 分",mapurl:gmap(38.2244,140.7290,"磊々峡"),
+     desc:"名取川侵蝕形成的奇岩峽谷，入口平台處平坦可推輪椅欣賞。覗橋下方有天然心形岩洞（戀人聖地），是絕佳拍照點。",
+     kid:"「這條河很厲害，它用了好幾千年慢慢把岩石磨成奇怪的形狀！橋下面還有一個天然的愛心形狀岩石喔！」",
+     tip:"僅在入口平台觀景，不進入峽谷深處，確保輪椅安全與幼童體力。"},
+    {icon:"🛒",name:"さいち 超市（秋保名物おはぎ）",type:"秋保溫泉街・必訪",mapurl:gmap(38.2274,140.7222,"さいち"),
+     desc:"傳奇小超市，おはぎ（御萩）是全日本最有名的糯米餅，紅豆泥・黑芝麻・黃豆粉三種口味，開店前就大排長龍。注意：⚠️ 週三公休。",
+     kid:"「這家小店做的糯米糰子超有名！整個日本的人都跑來這裡買！外面裹的是甜甜的紅豆泥，裡面是軟軟的糯米，一口就喜歡上了！」",
+     tip:"⚠️ 週三公休，行程剛好是週三（7/29）需再確認，建議抵達當天電話確認。"},
+  ],
+  food:[
+    {icon:"🍡",name:"さいち 超市・午餐輕食",detail:"おはぎ ¥175/個・紅豆泥/黑芝麻/黃豆粉口味・炸豆腐・地酒"},
+    {icon:"🍶",name:"一之蔵「すず音」發泡清酒",detail:"微氣泡低酒精・冰鎮後極度消暑・佐勘房間小酌"},
+    {icon:"🥩",name:"佐勘飯店 日式會席料理・晚餐",detail:"含 A5 仙台牛・豐富飲料選擇・已含住宿費用"},
+  ]
+},
+{
+  emoji:"🎨",title:"溪谷早晨・職人手作・平穩返程",date:"07/30（四）",
+  transport:[
+    {icon:"t-walk",sym:"🚶",main:"佐勘 → 磊々峡入口（清晨散步）",sub:"步行 10 分・清晨涼爽最適合",
+     from:{lat:38.2283,lng:140.7199,name:"佐勘飯店"},to:{lat:38.2244,lng:140.7290,name:"磊々峡"},mode:"walking"},
+    {icon:"t-taxi",sym:"🚕",main:"佐勘 → 秋保工藝之里",sub:"計程車約 5 分・或請飯店協助安排",
+     from:{lat:38.2283,lng:140.7199,name:"佐勘飯店"},to:{lat:38.2207,lng:140.7210,name:"秋保工藝之里"},mode:"driving"},
+    {icon:"t-shuttle",sym:"🚌",main:"佐勘 → 仙台車站（免費接駁）",sub:"14:00 出發・約 40 分",
+     from:{lat:38.2283,lng:140.7199,name:"佐勘飯店"},to:{lat:38.2601,lng:140.8824,name:"仙台車站"},mode:"driving"},
+    {icon:"t-walk",sym:"🚶",main:"仙台車站 → 東大都會酒店（再入住）",sub:"直通・步行 1 分",
+     from:{lat:38.2601,lng:140.8824,name:"仙台車站"},to:{lat:38.2596,lng:140.8834,name:"東大都會酒店"},mode:"walking"},
+  ],
+  spots:[
+    {icon:"🪆",name:"秋保工藝之里・職人工房",type:"體驗手作・小芥子彩繪",mapurl:gmap(38.2207,140.7210,"秋保工藝之里"),
+     desc:"溫泉街高台上的職人聚落，有木工、漆器、小芥子木偶彩繪等工房。小芥子彩繪體驗需事先預約，現場可觀賞職人精細木作與捏塑示範。",
+     kid:"「這裡住著很厲害的師傅，他們用手工慢慢把木頭變成好看的娃娃！這個圓圓的木娃娃叫做『小芥子』，你可以自己拿筆在上面畫你最喜歡的圖案，畫完就是你自己的娃娃！」",
+     tip:"小芥子彩繪體驗須事先電話預約，約 30～60 分鐘，費用約 ¥1,500。⚠️ 工藝之里週二公休。"},
+    {icon:"🛍️",name:"S-PAL 仙台地下街・採購伴手禮",type:"購物・全館無障礙",mapurl:gmap(38.2601,140.8824,"S-PAL仙台"),
+     desc:"與仙台車站直通，B1F 伴手禮街，2F 有「藤原屋みちのく酒紀行」威士忌梅酒清酒專賣（自動試飲機），是全程最重要的酒類採購點。",
+     kid:"「這個地下街裡面有好多好多仙台才有的點心和禮物！你要不要挑一個送給台灣的朋友？還有超好吃的奶油大福（喜久福），冰冰涼涼甜甜的！」",
+     tip:"藤原屋みちのく酒紀行是宮城峽威士忌採購最佳地點，自動試飲機先喝再買。"},
+  ],
+  food:[
+    {icon:"☕",name:"Café 青山文庫・下午茶",detail:"仙台站步行 6 分・クリームソーダ ¥990＋焦糖堅果雪紡蛋糕 ¥748"},
+    {icon:"🍡",name:"喜久水庵 喜久福（傍晚甜點）",detail:"S-PAL 購入・冷凍生奶油大福・¥300／個"},
+  ]
+},
+{
+  emoji:"🐬",title:"海洋世界・仙台牛燒肉大餐",date:"07/31（五）",
+  transport:[
+    {icon:"t-train",sym:"🚆",main:"仙台站 → 中野栄站",sub:"JR 仙石線・約 18 分・¥210／人",
+     from:{lat:38.2601,lng:140.8824,name:"仙台車站"},to:{lat:38.2805,lng:140.9848,name:"中野栄站"},mode:"transit"},
+    {icon:"t-shuttle",sym:"🚌",main:"中野栄站南口 → 水族館（免費接駁）",sub:"宮城交通・約 10 分・30 分一班",
+     from:{lat:38.2805,lng:140.9848,name:"中野栄站"},to:{lat:38.2712,lng:140.9807,name:"仙台海洋森林水族館"},mode:"walking"},
+    {icon:"t-shuttle",sym:"🚌",main:"水族館 → 中野栄站（回程）",sub:"⚠️ 末班車約 16:00 請注意",
+     from:{lat:38.2712,lng:140.9807,name:"仙台海洋森林水族館"},to:{lat:38.2805,lng:140.9848,name:"中野栄站"},mode:"walking"},
+    {icon:"t-train",sym:"🚆",main:"中野栄站 → 仙台站",sub:"JR 仙石線・約 18 分",
+     from:{lat:38.2805,lng:140.9848,name:"中野栄站"},to:{lat:38.2601,lng:140.8824,name:"仙台車站"},mode:"transit"},
+  ],
+  spots:[
+    {icon:"🐠",name:"仙台海洋森林水族館（うみの杜）",type:"全館室內・無障礙・週五避開週末人潮",mapurl:gmap(38.2712,140.9807,"仙台海洋森林水族館"),
+     desc:"東北最大水族館。「三陸之海」大水槽一萬條沙丁魚同步游動。海豚＋海獅＋鳥類聯合表演秀、花園鰻沙缸（幼童最愛）。全館通道平坦可推輪椅，有無障礙洗手間。",
+     kid:"「你知道嗎？這個水族館裡面有一萬條沙丁魚！牠們會一起游泳，像一個大大的銀色龍捲風！還有花園鰻，牠住在沙子裡面只有把頭伸出來，看起來像花園裡長出來的植物！我們去找牠們！」",
+     tip:"入館後立刻確認海豚秀時刻表，提早 15 分鐘佔無障礙輪椅觀賞區。⚠️ 回程接駁末班約 16:00。"},
+    {icon:"🥩",name:"米澤牛燒肉 仔虎・晚餐大餐",type:"高級燒肉・⚠️ 本週務必預約",mapurl:gmap(38.2627,140.8803,"米澤牛燒肉仔虎"),
+     desc:"米澤牛、山形牛、仙台牛三大和牛一次品嚐，仙台駅前店 8F 視野開闊。9 人大團體需提前線上訂位包廂，官網提供中文介面。晚餐竹虎套餐 ¥14,080。",
+     kid:"「今晚我們要吃超特別的牛肉！這種牛叫做米澤牛，住在日本山裡面每天喝乾淨的山泉水，所以牠的肉放在嘴巴裡面會融化！你要學大人夾肉放在烤網上烤嗎？」",
+     tip:"⚠️ 本週內必須預約 9 人包廂！官網：team-toranomon.com"},
+  ],
+  food:[
+    {icon:"🥚",name:"みのりカフェ・早餐（S-PAL 2F）",detail:"全農直營・TKG 雞蛋拌飯套餐約 ¥700～900・7:30 開門"},
+    {icon:"🦑",name:"水族館限定午餐",detail:"花園鰻造型包子＋深海藍霜淇淋・館內限定"},
+    {icon:"🥃",name:"浦霞 純米吟釀・餐中酒",detail:"仙台牛燒肉最佳搭配・¥700～900／杯"},
+  ]
+},
+{
+  emoji:"🎉",title:"分組同樂・滿載而歸",date:"08/01（六）",
+  transport:[
+    {icon:"t-walk",sym:"🚶",main:"酒店 → 麵包超人兒童博物館",sub:"步行 5 分・10:00 準時入館",
+     from:{lat:38.2596,lng:140.8834,name:"東大都會酒店"},to:{lat:38.2641,lng:140.8875,name:"麵包超人兒童博物館"},mode:"walking"},
+    {icon:"t-walk",sym:"🚶",main:"酒店 → AER 展望台（31F）",sub:"步行 5 分・免費入場・全無障礙電梯",
+     from:{lat:38.2596,lng:140.8834,name:"東大都會酒店"},to:{lat:38.2627,lng:140.8818,name:"AER展望台"},mode:"walking"},
+    {icon:"t-train",sym:"🚆",main:"仙台站 → 仙台機場",sub:"仙台機場線・約 17 分・¥660／人・搭 16:05 班機",
+     from:{lat:38.2601,lng:140.8824,name:"仙台車站"},to:{lat:38.1399,lng:140.9171,name:"仙台機場"},mode:"transit"},
+  ],
+  spots:[
+    {icon:"🍞",name:"麵包超人兒童博物館",type:"幼童・⚠️ 需事先購買日時指定票",mapurl:gmap(38.2641,140.8875,"麵包超人兒童博物館"),
+     desc:"小孩放電組首選。10:00 搶先入館，現烤各角色造型麵包（¥400～600）是最大亮點。1F 無障礙免門票區可購買全系列限定商品。",
+     kid:"「麵包超人的家就在這裡！裡面會有真正的果醬爺爺在烤麵包，烤出來的麵包就是麵包超人的臉！你要選哪個角色的麵包？細菌人的黑色麵包還是麵包超人的圓圓臉？」",
+     tip:"⚠️ 本週內必須上官網購買 8/1 上午時段日時指定票，暑假期間常售完，今天就訂！"},
+    {icon:"🏙️",name:"AER 展望台（31 樓）",type:"大人觀景・免費・全無障礙",mapurl:gmap(38.2627,140.8818,"AER展望台"),
+     desc:"仙台市最高免費展望台，晴天可遠眺太平洋與奧羽山脈。室內冷氣舒適，無需購票直接搭無障礙電梯上樓。",
+     kid:"「我們要坐電梯到好高好高的地方！從那裡可以看到整個仙台市，連遠遠的山和海都看得到！你能找到我們住的飯店在哪裡嗎？」",
+     tip:"開放時間 10:00～20:00，免費無需預約。10:00 與麵包超人博物館同步分組出發。"},
+    {icon:"✈️",name:"仙台機場・最後採購",type:"免稅店・ずんだ茶寮・陣中牛舌",mapurl:gmap(38.1399,140.9171,"仙台機場"),
+     desc:"3F 有ずんだ茶寮（冷凍毛豆麻糬可帶上飛機），免稅店有宮城峽威士忌・勝山大吟釀・萩の月。1F 陣中牛舌需現場候位。",
+     kid:"「我們要回台灣囉！在搭飛機之前，要最後喝一杯毛豆奶昔跟仙台說再見！你這次旅行最喜歡什麼？」",
+     tip:"陣中機場店 1F 到達口前・現場候位・最後點餐 19:30・報到完成後立刻前往排隊。"},
+  ],
+  food:[
+    {icon:"🍞",name:"麵包超人博物館・造型麵包（早餐）",detail:"現烤角色造型麵包・¥400～600／個"},
+    {icon:"🥩",name:"陣中 機場店・最後牛舌（午餐）",detail:"丸ごと牛タン塩定食 ¥2,200・現場候位"},
+    {icon:"🥤",name:"ずんだ茶寮 機場店（登機前）",detail:"毛豆奶昔 ¥420～530・冷凍麻糬帶回台灣"},
+  ]
+}
+];
+
+function makeMapUrl(from, to, mode){
+  const m = mode==="transit"?"transit": mode==="walking"?"walking":"driving";
+  return "https://www.google.com/maps/dir/?api=1"
+    +"&origin="+from.lat+","+from.lng
+    +"&destination="+to.lat+","+to.lng
+    +"&travelmode="+m;
+}
+
+function buildPanel(d,i){
+  let transport='';
+  d.transport.forEach(t=>{
+    const url = makeMapUrl(t.from, t.to, t.mode);
+    transport+=`<div class="transport-step">
+<div class="t-icon ${t.icon}">${t.sym}</div>
+<div class="t-text">
+  <div class="t-main">${t.main}</div>
+  <div class="t-sub">${t.sub}</div>
+  <a class="map-btn" href="${url}" target="_blank" rel="noopener">
+    <span>📍</span> ${t.from.name} → ${t.to.name} <span class="map-arrow">↗</span>
+  </a>
+</div>
+</div>`;
+  });
+
+  let spots='';
+  d.spots.forEach(s=>{
+    spots+=`<div class="spot-card" onclick="toggleSpot(this)">
+<div class="spot-header">
+  <span class="spot-icon">${s.icon}</span>
+  <div style="flex:1"><div class="spot-name">${s.name}</div><div class="spot-type">${s.type}</div></div>
+  <span class="chevron">▾</span>
+</div>
+<div class="spot-body">
+  <p class="spot-desc">${s.desc}</p>
+  <a class="map-btn" href="${s.mapurl}" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="margin-bottom:10px;display:inline-flex">
+    📍 在 Google Maps 開啟 <span class="map-arrow">↗</span>
+  </a>
+  <div class="kid-box" style="margin-top:10px">
+    <div class="kid-label">👧 怎麼跟 5 歲小朋友說</div>
+    <div class="kid-text">「${s.kid}」</div>
+  </div>
+  ${s.tip?`<div class="tip-box"><div class="tip-label">⚠️ 注意事項</div><div class="tip-text">${s.tip}</div></div>`:''}
+</div>
+</div>`;
+  });
+
+  let food='';
+  d.food.forEach(f=>{
+    food+=`<div class="food-row">
+<span class="food-icon">${f.icon}</span>
+<div><div class="food-name">${f.name}</div><div class="food-detail">${f.detail}</div></div>
+</div>`;
+  });
+
+  return `<div class="day-panel${i===0?' active':''}" id="panel-${i}">
+<div class="day-header">
+  <div class="day-badge">${d.emoji}</div>
+  <div><div class="day-title">${d.title}</div><div class="day-date">${d.date}</div></div>
+</div>
+<div class="section-label">交通路線</div>
+<div class="transport-card">${transport}</div>
+<div class="section-label">景點介紹（點開查看地圖與小朋友說法）</div>
+<div class="spots">${spots}</div>
+<div class="section-label">餐廳・美食・甜點</div>
+<div class="food-card-wrap" style="margin-bottom:1rem">${food}</div>
+</div>`;
+}
+
+document.getElementById('panels').innerHTML=days.map((d,i)=>buildPanel(d,i)).join('');
+
+function switchDay(idx){
+  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',i===idx));
+  document.querySelectorAll('.day-panel').forEach((p,i)=>p.classList.toggle('active',i===idx));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleSpot(el){
+  el.classList.toggle('open');
+}
+</script>
+</body>
+</html>
